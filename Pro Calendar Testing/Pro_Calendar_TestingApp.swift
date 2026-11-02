@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Pro_Calendar_TestingApp: App {
@@ -13,5 +14,6 @@ struct Pro_Calendar_TestingApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [DayNote.self, MonthNote.self])
     }
 }
