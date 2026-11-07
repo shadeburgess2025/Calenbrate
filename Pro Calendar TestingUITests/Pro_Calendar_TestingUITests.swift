@@ -5,35 +5,40 @@
 //  Created by Shade Burgess on 10/23/26.
 //
 
-import XCTest
+import XCTest // interface testing and performance measurements
 
+/// contains app launch and launch performance tests
 final class Pro_Calendar_TestingUITests: XCTestCase {
 
+    // setUpWithError() function
+    /// a throwing void function that configures interface tests to stop after a failure
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        // stops the test immediately if a check fails
         continueAfterFailure = false
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
+    // tearDownWithError() function
+    /// an empty throwing void function reserved for cleanup after each interface test
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    // testExample() function
+    /// a throwing test function that launches the app
     @MainActor
     func testExample() throws {
-        // UI tests must launch the application that they test.
+        // creates and launches the app for the interface test
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+    // testLaunchPerformance() function
+    /// a throwing test function that measures the time needed to launch the app
     @MainActor
     func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
+        // measures how long the app takes to launch
         measure(metrics: [XCTApplicationLaunchMetric()]) {
             XCUIApplication().launch()
         }
